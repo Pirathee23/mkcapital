@@ -8763,17 +8763,17 @@ h1, h2, h3, h4, h5,
         background: #265b09;
         color: #fff; }
 
-.ftco-about {
+.ftco-team {
   background-color: rgba(36,91,9,0.1);
   background-blend-mode: lighten;
 
-  z-index: -1; }
+   }
 
-.ftco-about .img-about {
-  height: 90%;
+.ftco-team .img-team {
+  height: 95%;
   z-index: 0;
   position: relative; }
-  .ftco-about .img-about .img {
+  .ftco-team .img-team .img {
     display: block;
     padding: 1em;
     padding-top: 3em;
@@ -8782,21 +8782,21 @@ h1, h2, h3, h4, h5,
     position: relative;
     z-index: 1; }
 
-.ftco-about .column {
+.ftco-team .column {
   float: left;
   width: 50%;
   padding: 0 10px;
 }
 
-.ftco-about .row {margin: 0 -5px;}
+.ftco-team .row {margin: 0 -5px;}
 
-.ftco-about .row:after {
+.ftco-team .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.ftco-about .card {
+.ftco-team .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: left;
@@ -8804,7 +8804,7 @@ h1, h2, h3, h4, h5,
 }
 
 @media screen and (max-width: 992px) {
-  .ftco-about .column {
+  .ftco-team .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
@@ -8814,27 +8814,27 @@ h1, h2, h3, h4, h5,
 
 
 
-.ftco-about ul.about-info {
+.ftco-team ul.team-info {
   display: inline-block;
   padding: 0;
   margin: 0;
   width: 100%; }
-  .ftco-about ul.about-info li {
+  .ftco-team ul.team-info li {
     list-style: none;
     margin-bottom: 2px;
     color: #265b09;
     }
-    .ftco-about ul.about-info li span {
+    .ftco-team ul.team-info li span {
         font-weight: 600;
         color: #000;
         width: 200px; }
 
-.ftco-about .counter-wrap .text p {
+.ftco-team .counter-wrap .text p {
   font-size: 20px; }
-  .ftco-about .counter-wrap .text p span {
+  .ftco-team .counter-wrap .text p span {
     font-weight: 400;
     color: #000; }
-  .ftco-about .counter-wrap .text p span.number {
+  .ftco-team .counter-wrap .text p span.number {
     font-weight: 600;
     color: #265b09; }
 
@@ -8967,7 +8967,7 @@ h1, h2, h3, h4, h5,
   background: #265b09;
   background-color: rgba(255,255,255,0);
   background-blend-mode: lighten;
-  z-index: -1; }
+}
   .ftco-hireme h2 {
     padding: 6em 0;
     padding-bottom: 0 !important;

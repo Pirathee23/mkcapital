@@ -5084,6 +5084,70 @@ a.close.disabled {
   padding: 0.5rem 0.75rem;
   color: #212529; }
 
+
+
+  @media (min-width: 768px) {
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+      display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+      transition: none;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: absolute;
+      top: 0;
+      right: -33.3333%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+      display: block;
+      visibility: visible;
+    }
+  }
+
 .carousel {
   position: relative; }
 
@@ -5105,7 +5169,6 @@ a.close.disabled {
   display: none;
   float: left;
   width: 100%;
-  margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -5264,16 +5327,41 @@ a.close.disabled {
   .carousel-indicators .active {
     opacity: 1; }
 
-.carousel-caption {
-  position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #fff;
+.carousel .card-img-top {
+  height: 200px;
+}
+
+.carousel .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
   text-align: center; }
+
+.carousel .card-body {
+  width: 100%;
+  }
+
+.carousel .card-title {
+  font-weight: 200;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 5px;
+  color: #808080;
+}
+.carousel .card-text {
+  padding: 0;
+  margin: 0;
+  color: #4f4f4f;
+}
+
+.carousel .card-text span{
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
 
 @-webkit-keyframes spinner-border {
   to {
@@ -8766,21 +8854,21 @@ h1, h2, h3, h4, h5,
 .ftco-team {
   background-color: rgba(36,91,9,0.1);
   background-blend-mode: lighten;
-
-   }
+}
 
 .ftco-team .img-team {
   height: 95%;
   z-index: 0;
   position: relative; }
-  .ftco-team .img-team .img {
-    display: block;
-    padding: 1em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    width: 100%;
-    position: relative;
-    z-index: 1; }
+
+.ftco-team .img-team .img {
+  display: block;
+  padding: 1em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  width: 100%;
+  position: relative;
+  z-index: 1; }
 
 .ftco-team .column {
   float: left;
@@ -8796,12 +8884,63 @@ h1, h2, h3, h4, h5,
   clear: both;
 }
 
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #f1f1f1;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  background-color: #f1f1f1;
+  padding-right: 10px;
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+
 .ftco-team .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: left;
   background-color: #f1f1f1;
 }
+
+.ftco-team .flip-card a {
+  padding: 3px;
+ }
 
 @media screen and (max-width: 992px) {
   .ftco-team .column {
@@ -8810,9 +8949,6 @@ h1, h2, h3, h4, h5,
     margin-bottom: 20px;
   }
 }
-
-
-
 
 .ftco-team ul.team-info {
   display: inline-block;
@@ -9468,7 +9604,7 @@ textarea.form-control {
       height: 500px; } }
 
 .contact-section .contact-info p a {
-  color: #fff; }
+  color: #000; }
 
 .contact-section .contact-form {
   width: 100%; }

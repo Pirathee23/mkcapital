@@ -8256,7 +8256,7 @@ h1, h2, h3, h4, h5,
   color: #265b09 !important; }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: white !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -8850,6 +8850,18 @@ h1, h2, h3, h4, h5,
         border: 1px solid transparent;
         background: #265b09;
         color: #fff; }
+
+
+  #myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height:auto;
+    width:auto;
+    z-index: -100;
+  }
 
 .ftco-team {
   background-color: rgba(36,91,9,0.1);

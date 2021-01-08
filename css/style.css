@@ -2688,15 +2688,15 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #fff;
   text-align: inherit;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.9);
   border: 0; }
   .dropdown-item:hover, .dropdown-item:focus {
-    color: #16181b;
+    color: #fff;
     text-decoration: none;
-    background-color: #f8f9fa; }
+    background-color: green; }
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
@@ -8256,7 +8256,7 @@ h1, h2, h3, h4, h5,
   color: #265b09 !important; }
 
 .ftco-navbar-light {
-  background: white !important;
+  background: transparent !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -8294,7 +8294,7 @@ h1, h2, h3, h4, h5,
     padding-bottom: .7rem;
     padding-left: 20px;
     padding-right: 20px;
-    color: #787d80;
+    color: #FFF;
     font-weight: 400;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link span {
@@ -8807,8 +8807,8 @@ h1, h2, h3, h4, h5,
     border: 1px solid #265b09 !important;
     color: #FFFFFF !important; }
     .btn.btn-primary:hover {
-      border: 1px solid #265b09 !important;
-      background: #265b09 !important;
+      border: 1px solid #173805 !important;
+      background: #173805 !important;
       color: #FFFFFF !important; }
     .btn.btn-primary.btn-outline-primary {
       border: 2px solid #265b09 !important;
@@ -8851,27 +8851,34 @@ h1, h2, h3, h4, h5,
         background: #265b09;
         color: #fff; }
 
-
+.videos .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   #myVideo {
     position: absolute;
     top: 0;
     left: 0;
-
-    z-index: -100;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
   }
-  @media (min-aspect-ratio: 16/9){
+  @media (min-width: 360px){
     #myVideo {
       width: 100%;
       height: auto;
     }
   }
-  @media (max-aspect-ratio: 16/9){
+  @media (max-width: 360px){
     #myVideo {
       width: auto;
       height: 100%;
     }
   }
-
 
 .ftco-team {
   background-color: rgba(36,91,9,0.1);
